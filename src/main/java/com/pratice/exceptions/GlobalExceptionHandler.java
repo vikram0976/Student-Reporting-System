@@ -1,4 +1,4 @@
-package com.masai.exceptions;
+package com.pratice.exceptions;
 
 import java.time.LocalDateTime;
 
@@ -10,9 +10,11 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.NoHandlerFoundException;
 
+
+
 @ControllerAdvice
 public class GlobalExceptionHandler {
-
+	
 	@ExceptionHandler(StudentException.class)
 	public ResponseEntity<ErrorDetails> getStudentException(StudentException sE, WebRequest wR) {
 
@@ -25,7 +27,6 @@ public class GlobalExceptionHandler {
 		return new ResponseEntity<ErrorDetails>(errorDetails, HttpStatus.BAD_REQUEST);
 
 	}
-
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	public ResponseEntity<ErrorDetails> methodArgumentNotValidExceptionHandler(MethodArgumentNotValidException mave) {
 
