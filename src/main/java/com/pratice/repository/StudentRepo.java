@@ -9,6 +9,4 @@ import com.pratice.models.Student;
 @Repository
 public interface StudentRepo extends JpaRepository<Student, Integer> {
 
-	
-	
 }
